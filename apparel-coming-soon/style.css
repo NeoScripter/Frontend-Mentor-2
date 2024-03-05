@@ -1,0 +1,214 @@
+/*
+### Gradients
+
+- Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+ */
+
+:root {
+    --des-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+    --grayish-red: hsl(0, 6%, 24%);
+}
+
+/* General */
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url(fonts/JosefinSans-VariableFont_wght.ttf);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans';
+    font-size: 0.875rem;
+    line-height: 1.2;
+    min-height: 100vh;
+}
+
+/* Main layout */
+
+.wrapper {
+    display: flex;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+}
+
+#desktop-image {
+    display: block;
+    min-width: 45%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: top;
+}
+
+#mobile-image {
+    display: none;
+}
+
+.description {
+    padding-inline: 8vw;
+    position: relative;
+}
+
+.logo {
+    margin-top: 6vh;
+    margin-bottom: 8vh;
+}
+
+.input-wrapper {
+    position: relative;
+    display: block;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+input[type="email"] {
+    width: 80%;
+    padding: 1em;
+    margin-bottom: 10px;
+    border: 1px solid var(--des-red);
+    border-radius: 25px;
+}
+
+input::placeholder {
+    color: var(--des-red);
+    font-family: 'Josefin Sans';
+    padding-left: .6em;
+    opacity: 60%;
+}
+
+input[type="email"]:focus {
+    outline: none;
+}
+
+.input-error {
+    border: 2px solid hsl(0, 93%, 68%);
+}
+
+.error-message {
+    color: var(--soft-red);
+    display: none;
+    font-weight: 400;
+    padding-inline: 10%;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    width: 9vmax;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%) 20%, hsl(0, 74%, 74%));
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    position: absolute;
+    right: 15%;
+    top: 0;
+    height: 84%;
+    border: none;
+}
+
+.icon {
+    position: absolute;
+    right: 120%;
+    top: 28%;
+    width: 1.3rem;
+    display: none;
+}
+
+button:hover, button:focus {
+    background: linear-gradient(135deg, hsl(0, 80%, 86%) 70%, hsl(0, 74%, 74%));
+}
+
+button:active {
+    background: linear-gradient(135deg, hsl(0, 64%, 88%) 20%, hsl(0, 80%, 86%));
+}
+
+/* Font styling */
+
+h1 {
+    font-size: 10vmin;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+span, p {
+    color: var(--des-red);
+}
+
+span {
+    font-weight: 300;
+}
+
+.description p {
+    line-height: 1.5;
+    margin-block: 3vh;
+}
+
+/* Attribution */
+
+footer {
+    position: absolute;
+    translate: -50%;
+    bottom: 0;
+    left: 50%;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    color: rgb(0,0,0); 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* Responsive design */
+
+@media (max-width: 800px) and (min-width: 500px) {
+    .description {
+        padding-inline: 4vw;
+    }
+}
+@media (max-width: 500px) {
+    #desktop-image{
+        display: none;
+    }
+    #mobile-image {
+        display: block;
+        width: 100%;
+        margin-bottom: 6vh;
+    }
+    .wrapper {
+        flex-wrap: wrap;
+    }
+    .description {
+        padding-inline: 0;
+        text-align: center;
+        margin-bottom: 15vh;
+    }
+    .logo {
+        margin-bottom: 2vh;
+    }
+    input[type="email"] {
+        width: 70%;
+    }
+    footer {
+        bottom: -15vh;
+    }
+    p {
+        padding-inline: 8vw;
+    }
+    .error-message {
+        padding-left: 0;
+    }
+}
