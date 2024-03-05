@@ -1,1 +1,1 @@
-* [Appareal Coming Soon Frontend Mentor](https://neoscripter.github.io/Websites/apparel-coming-soon/), a responsive webpage with a webform.
+* [Appareal Coming Soon](https://neoscripter.github.io/website-portfolio/apparel-coming-soon/), a responsive webpage with a webform.
