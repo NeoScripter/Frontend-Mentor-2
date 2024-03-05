@@ -24,6 +24,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all .25s ease-out;
 }
 
 body {
@@ -114,6 +115,8 @@ button {
     top: 0;
     height: 84%;
     border: none;
+    box-shadow: 0 .75rem 1.5rem hsla(0, 36%, 70%, 0.5);
+    transition: all .25s ease-out;
 }
 
 .icon {
