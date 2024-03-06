@@ -1,0 +1,385 @@
+/* ## Colors
+
+### Primary
+
+- Scissors Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%)
+- Paper Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%)
+- Rock Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%)
+- Lizard Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
+- Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%)
+
+### Neutral
+
+- Dark Text: hsl(229, 25%, 31%)
+- Score Text: hsl(229, 64%, 46%)
+- Header Outline: hsl(217, 16%, 45%)
+
+### Background
+
+- Radial Gradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%)
+
+## Fonts
+
+- Family: [Barlow Semi Condensed](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
+- Weights: 600, 700 */
+:root {
+    --dark-text: hsl(229, 25%, 31%);
+    --score-text: hsl(229, 64%, 46%);
+    --header-outline: hsl(217, 16%, 45%);
+    --gr-one: hsl(214, 47%, 23%);
+    --gr-two: hsl(237, 49%, 15%);
+    --rock-b: hsl(349, 71%, 52%);
+    --rock-b2: hsl(349, 70%, 56%);
+}
+
+@font-face {
+    font-family: 'Barlow Semi Condensed';
+    src: url(fonts/BarlowSemiCondensed-Regular.ttf);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .25s ease-out;
+}
+
+/* Main layout */
+
+body {
+    font-size: 1.5rem;
+    font-family: 'Barlow Semi Condensed';
+    background: radial-gradient(at top, var(--gr-one) 25%, var(--gr-two));
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+/* Header */
+
+.header {
+    margin: 1em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 2px solid var(--header-outline);
+    padding: .6em;
+    border-radius: 10px;
+    grid-template-areas: 
+    "name . . score";
+}
+
+.image-wrapper {
+    padding: .4em;
+}
+
+.game-name {
+    height: 3em;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 10px;
+    min-width: 5em;
+}
+
+/* Main layout step 1 */
+
+#initial {
+    display: grid;
+    margin-top: 1em;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    column-gap: 3em;
+    row-gap: 1em;
+    background-image: url(images/bg-triangle.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+}
+
+.moves {
+    box-sizing: content-box;
+    aspect-ratio: 1;
+    width: 5em;
+    border-radius: 50%;
+    background-color: aliceblue;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+    border-width: 1rem;
+    border-style: solid;
+    cursor: pointer;
+    transition: all .25s ease-out;
+}
+
+.moves:hover, .moves:focus {
+    width: 5.5em;
+}
+
+#rock {
+    grid-column: 1 / span 2;
+    background-image: url(images/icon-rock.svg);
+    border-color: hsl(349, 70%, 56%);
+    box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 0.5), inset 0 5px 1px 0 rgb(0,0,0,0.2), 0 5px 4px 1px rgb(0,0,0,0.2), 0 6px 0 hsl(349, 71%, 52%);
+}
+
+#paper {
+    background-image: url(images/icon-paper.svg);
+    border-color: hsl(230, 89%, 62%);
+    box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 0.5), inset 0 5px 1px 0 rgb(0,0,0,0.2), 0 5px 4px 1px rgb(0,0,0,0.2), 0 6px 0 hsl(230, 89%, 65%);
+}
+
+#scissors {
+    background-image: url(images/icon-scissors.svg);
+    border-color: hsl(39, 89%, 49%);
+    box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 0.5), inset 0 5px 1px 0 rgb(0,0,0,0.2), 0 5px 4px 1px rgb(0,0,0,0.2), 0 6px 0 hsl(40, 84%, 53%);
+}
+
+/* Main layout step 2 */
+
+#outcome {
+    display: none;
+    background: none;
+    margin-top: 2em;
+    align-items: center;
+    gap: 2em;
+    grid-template-areas: 
+    "player restart computer";
+}
+
+.second-moves {
+    width: 8rem;
+    border: none;
+    background-color: hsl(239, 48%, 18%);
+    box-sizing: content-box;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+/* Main layout step 3 */
+
+.restart {
+    display: none;
+    text-align: center;
+    padding-top: 2em;
+    width: 8em;
+}
+
+/* Rules button */
+
+.check-rules {
+    align-self: flex-end;
+    padding: 1em 3em;
+    margin: 2em;
+    margin-top: 0;
+    background-color: transparent;
+    border: 1px solid aliceblue;
+    border-radius: 5px;
+    color: aliceblue;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.check-rules:hover, button:focus {
+    background-color: hsla(217, 16%, 45%,0.5);
+}
+
+.check-rules:active {
+    background-color: hsla(217, 16%, 45%, 0.8);
+}
+
+/* Rules styling */
+
+#rules {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.rules-wrapper {
+    background-color: aliceblue;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.rules-wrapper img {
+    max-width: 100%;
+}
+
+.exit-rules {
+    width: 1em;
+    font-size: 2rem;
+    color: hsl(217, 17%, 73%);
+    border: none;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+#play-again {
+    border-radius: 10px;
+    padding-block: 0.5em;
+    margin-top: 0.5em;
+    font-size: 1rem;
+    font-weight: 600;
+    color: hsl(214, 47%, 23%);
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+#play-again:focus, #play-again:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#play-again:active {
+    color: rgb(190, 29, 29);
+}
+
+/* Text styling */
+
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+    color: aliceblue;
+}
+
+.score p {
+    font-weight: 900;
+    color: var(--score-text);
+}
+
+.score p, .check-rules {
+    font-size: .8rem;
+    letter-spacing: 2px;
+}
+
+h1 {
+    color: var(--dark-text);
+    font-weight: 900;
+    font-size: 3.5rem;
+    line-height: 1;
+}
+
+.title {
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    font-weight: 900;
+    color: aliceblue;
+}
+
+.up {
+    margin-bottom: 2em;
+}
+
+.bottom {
+    display: none;
+    margin-top: 2em;
+}
+
+/* Grid areas */
+
+.image-wrapper { grid-area: name;}
+.score { grid-area: score;}
+.restart { grid-area: restart;}
+.left { grid-area: player;}
+.right { grid-area: computer;}
+
+/* Responsive design for small screens */
+
+@media (max-width: 500px) {
+    .check-rules {
+        align-self: center;
+    }
+    h1 {
+        font-size: 10vw;
+    }
+    .wrapper {
+        justify-content: flex-start;
+    }
+    .image-wrapper {
+        padding: 2vw;
+    }
+    .game-name {
+        height: 12vw;
+    }
+    .score {
+        min-width: 25vw;
+    }
+    .header {
+        margin: 5vw;
+    }
+    .game {
+        column-gap: 8vw;
+        row-gap: 4vw;
+        margin-block: 10vw;
+    }
+    .moves {
+        width: 20vw;
+        border-width: 3vw;
+    }
+    .moves:hover, .moves:focus {
+        width: 26vw;
+    }
+    #rules {
+        background-color: aliceblue;
+        align-items: flex-start;
+    }
+    .top-bar {
+        justify-content: center;
+        margin-bottom: 3em;
+    }
+    .exit-rules {
+        position: absolute;
+        bottom: 5%;
+        left: 45%;
+    }
+    #outcome {
+        margin-bottom: 2em;
+        justify-items: center;
+        grid-template-areas: 
+        "player computer"
+        "restart restart";
+    }
+    .title {
+        font-size: 0.8rem;
+    }
+    .up {
+        display: none;
+    }
+    .bottom {
+        display: block;
+    }
+    .restart {
+        padding-top: 0;
+        width: 8em;
+    }
+}

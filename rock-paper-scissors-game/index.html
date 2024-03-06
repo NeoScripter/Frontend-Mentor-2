@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <style>
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="rules">
+        <div class="rules-wrapper">
+          <div class="top-bar">
+            <p>RULES</p>
+            <button class="exit-rules">X</button>
+          </div>
+          <img src="images/image-rules.svg" alt="Rules to the game: rock beats scissors, scissors beat paper, paper beats rock.">
+        </div>
+      </div>
+      <div class="header">
+        <div class="image-wrapper">
+          <img src="images/logo.svg" alt="Rock, Paper, Scissors" class="game-name">
+        </div>
+        <div class="score">
+          <p>SCORE</p>
+          <h1>0</h1>
+        </div>
+      </div>
+      <div id="outcome">
+        <div class="left">
+          <p class="title up">YOU PICKED</p>
+          <div id="player-choice" class="second-moves"></div>
+          <p class="title bottom">YOU PICKED</p>
+          </div>
+          <div class="right">
+            <p class="title up">THE HOUSE PICKED</p>
+            <div id="computer-choice" class="second-moves"></div>
+            <p class="title bottom">THE HOUSE PICKED</p>
+          </div>
+        <div class="restart">
+          <h2></h2>
+          <div id="play-again">PLAY AGAIN</div>
+        </div>
+      </div>
+      <div class="game" id="initial">
+        <div id="paper" class="moves" data-value="paper"></div>
+        <div id="scissors" class="moves" data-value="scissors"></div>
+        <div id="rock" class="moves" data-value="rock"></div>
+      </div>
+      <button class="check-rules">RULES</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+<!-- 
+Score
+Rules
+
+You Picked
+The House Picked
+
+You Win
+You Lose
+
+Play Again
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/NeoScripter">Ilya Andreev</a>.
+    </div>
+ -->
