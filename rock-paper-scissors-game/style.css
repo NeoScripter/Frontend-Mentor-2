@@ -30,6 +30,7 @@
     --gr-two: hsl(237, 49%, 15%);
     --rock-b: hsl(349, 71%, 52%);
     --rock-b2: hsl(349, 70%, 56%);
+    --common-box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 0.5), inset 0 5px 1px 0 rgb(0,0,0,0.2), 0 5px 4px 1px rgb(0,0,0,0.2);
 }
 
 @font-face {
@@ -133,19 +134,19 @@ body {
     grid-column: 1 / span 2;
     background-image: url(images/icon-rock.svg);
     border-color: hsl(349, 70%, 56%);
-    box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 0.5), inset 0 5px 1px 0 rgb(0,0,0,0.2), 0 5px 4px 1px rgb(0,0,0,0.2), 0 6px 0 hsl(349, 71%, 52%);
+    box-shadow: var(--common-box-shadow), 0 6px 0 hsl(349, 71%, 52%);
 }
 
 #paper {
     background-image: url(images/icon-paper.svg);
     border-color: hsl(230, 89%, 62%);
-    box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 0.5), inset 0 5px 1px 0 rgb(0,0,0,0.2), 0 5px 4px 1px rgb(0,0,0,0.2), 0 6px 0 hsl(230, 89%, 65%);
+    box-shadow: var(--common-box-shadow), 0 6px 0 hsl(230, 89%, 65%);
 }
 
 #scissors {
     background-image: url(images/icon-scissors.svg);
     border-color: hsl(39, 89%, 49%);
-    box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 0.5), inset 0 5px 1px 0 rgb(0,0,0,0.2), 0 5px 4px 1px rgb(0,0,0,0.2), 0 6px 0 hsl(40, 84%, 53%);
+    box-shadow: var(--common-box-shadow), 0 6px 0 hsl(40, 84%, 53%);
 }
 
 /* Main layout step 2 */
@@ -384,7 +385,7 @@ h1 {
     }
 }
 
-* Glowing effect */
+/* Glowing effect */
 
 .winner-glow {
     position: relative;
