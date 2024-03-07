@@ -160,7 +160,7 @@ body {
     "player restart computer";
 }
 
-.second-moves {
+.choice {
     width: 8rem;
     border: none;
     background-color: hsl(239, 48%, 18%);
@@ -359,7 +359,7 @@ h1 {
     }
     .exit-rules {
         position: absolute;
-        bottom: 5%;
+        bottom: 5vh;
         left: 45%;
     }
     #outcome {
@@ -381,5 +381,44 @@ h1 {
     .restart {
         padding-top: 0;
         width: 8em;
+    }
+}
+
+* Glowing effect */
+
+.winner-glow {
+    position: relative;
+    box-shadow: 0 0 5px #fff;
+  }
+
+  .winner-glow::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: inherit;
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    animation: glow-wave 1s infinite alternate;
+}
+
+@keyframes glow-wave {
+    0% {
+        opacity: 1;
+        box-shadow: 
+        0 0 0 3rem rgba(255, 255, 255, 0.1),
+        0 0 0 6rem rgba(255, 255, 255, 0.07), 
+        0 0 0 9rem rgba(255, 255, 255, 0.03); 
+    }
+    100% {
+        opacity: 0;
+        box-shadow: 
+        0 0 0 3rem rgba(255, 255, 255, 0.1), 
+        0 0 0 6rem rgba(255, 255, 255, 0.07), 
+        0 0 0 9rem rgba(255, 255, 255, 0.03);
     }
 }

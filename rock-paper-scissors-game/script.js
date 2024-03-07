@@ -18,6 +18,11 @@ openRules.addEventListener("click", () => {
     rulesWindow.style.display = "flex";
 });
 
+function declareWinner(winnerId) {
+    const winnerElement = document.getElementById(winnerId);
+    winnerElement.classList.add('winner-glow');
+  }
+
 function copyStyles(sourceId, targetId) {
     const source = document.getElementById(sourceId);
     const target = document.getElementById(targetId);
@@ -72,19 +77,37 @@ for (const move of moves) {
         const currentScore = parseInt(score.textContent);
 
         if (result === 'YOU WIN') {
-            score.textContent = `${parseInt(score.textContent) + 1}`;
+            setTimeout(() => {
+                declareWinner('player-choice');
+                score.textContent = `${parseInt(score.textContent) + 1}`;
+                sessionStorage.setItem('gameScore', score.textContent);
+            }, 2000);
             playAgainButton.textContent = 'PLAY AGAIN';
         } else if (result === 'YOU LOSE') {
             if (currentScore === 0) {
                 playAgainButton.textContent = 'START OVER';
             } else {
-                score.textContent = `${currentScore - 1}`;
+                setTimeout(() => {
+                    declareWinner('computer-choice');
+                    score.textContent = `${currentScore - 1}`;
+                    sessionStorage.setItem('gameScore', score.textContent);
+                }, 2000);
             }
         } else {
             playAgainButton.textContent = 'PLAY AGAIN';
         }
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedScore = sessionStorage.getItem('gameScore');
+
+    if (savedScore !== null) {
+      storedScore = parseInt(savedScore, 10);
+
+      score.textContent = storedScore;
+    }
+  });
 
 function resetElementStyle(element) {
     element.style.cssText = `
@@ -99,6 +122,10 @@ playAgainButton.addEventListener("click", () => {
     resetElementStyle(computerChoice);
     resetElementStyle(playerChoice);
        
+    const choices = document.querySelectorAll('.choice');
+        choices.forEach(choice => {
+        choice.classList.remove('winner-glow');
+    });
     initial.style.display = "grid";
     outcome.style.display = "none";
     restartContainer.style.display = "none";
