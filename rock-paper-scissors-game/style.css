@@ -359,7 +359,7 @@ h1 {
     }
     .exit-rules {
         position: absolute;
-        bottom: 5vh;
+        bottom: 10vh;
         left: 45%;
     }
     #outcome {
