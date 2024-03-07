@@ -315,7 +315,7 @@ h1 {
 
 /* Responsive design for small screens */
 
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
     .check-rules {
         align-self: center;
     }
