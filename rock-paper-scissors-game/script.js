@@ -85,6 +85,9 @@ for (const move of moves) {
             playAgainButton.textContent = 'PLAY AGAIN';
         } else if (result === 'YOU LOSE') {
             if (currentScore === 0) {
+                setTimeout(() => {
+                    declareWinner('computer-choice');
+                }, 2000);
                 playAgainButton.textContent = 'START OVER';
             } else {
                 setTimeout(() => {
