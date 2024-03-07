@@ -1,13 +1,27 @@
 /* ## Colors
 
+### Primary
+
 - Scissors Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%)
 - Paper Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%)
 - Rock Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%)
 - Lizard Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
 - Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%)
 
- */
+### Neutral
 
+- Dark Text: hsl(229, 25%, 31%)
+- Score Text: hsl(229, 64%, 46%)
+- Header Outline: hsl(217, 16%, 45%)
+
+### Background
+
+- Radial Gradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%)
+
+## Fonts
+
+- Family: [Barlow Semi Condensed](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
+- Weights: 600, 700 */
 :root {
     --dark-text: hsl(229, 25%, 31%);
     --score-text: hsl(229, 64%, 46%);
@@ -146,7 +160,7 @@ body {
     "player restart computer";
 }
 
-.choice {
+.second-moves {
     width: 8rem;
     border: none;
     background-color: hsl(239, 48%, 18%);
@@ -345,7 +359,7 @@ h1 {
     }
     .exit-rules {
         position: absolute;
-        bottom: 5vh;
+        bottom: 5%;
         left: 45%;
     }
     #outcome {
@@ -368,43 +382,4 @@ h1 {
         padding-top: 0;
         width: 8em;
     }
-}
-
-/* Glowing effect */
-
-.winner-glow {
-    position: relative;
-    box-shadow: 0 0 5px #fff;
-  }
-
-  .winner-glow::after {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    background: inherit;
-    border-radius: inherit;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
-    animation: glow-wave 1s infinite alternate;
-}
-
-@keyframes glow-wave {
-0% {
-    opacity: 1;
-    box-shadow: 
-    0 0 0 3rem rgba(255, 255, 255, 0.1),
-    0 0 0 6rem rgba(255, 255, 255, 0.07), 
-    0 0 0 9rem rgba(255, 255, 255, 0.03); 
-}
-100% {
-    opacity: 0;
-    box-shadow: 
-    0 0 0 3rem rgba(255, 255, 255, 0.1), 
-    0 0 0 6rem rgba(255, 255, 255, 0.07), 
-    0 0 0 9rem rgba(255, 255, 255, 0.03);
-}
 }

@@ -18,11 +18,6 @@ openRules.addEventListener("click", () => {
     rulesWindow.style.display = "flex";
 });
 
-function declareWinner(winnerId) {
-    const winnerElement = document.getElementById(winnerId);
-    winnerElement.classList.add('winner-glow');
-  }
-
 function copyStyles(sourceId, targetId) {
     const source = document.getElementById(sourceId);
     const target = document.getElementById(targetId);
@@ -55,16 +50,6 @@ let score = document.querySelector("h1");
 let result;
 let computerChoiceId;
 
-document.addEventListener('DOMContentLoaded', () => {
-    const savedScore = sessionStorage.getItem('gameScore');
-    
-    if (savedScore !== null) {
-      storedScore = parseInt(savedScore, 10);
-      
-      score.textContent = storedScore;
-    }
-  });
-
 for (const move of moves) {
     move.addEventListener("click", () => {
         setTimeout(() => {
@@ -87,21 +72,13 @@ for (const move of moves) {
         const currentScore = parseInt(score.textContent);
 
         if (result === 'YOU WIN') {
-            setTimeout(() => {
-                declareWinner('player-choice');
-                score.textContent = `${parseInt(score.textContent) + 1}`;
-                sessionStorage.setItem('gameScore', score.textContent);
-            }, 2000);
+            score.textContent = `${parseInt(score.textContent) + 1}`;
             playAgainButton.textContent = 'PLAY AGAIN';
         } else if (result === 'YOU LOSE') {
-            setTimeout(() => {declareWinner('computer-choice');}, 2000);
             if (currentScore === 0) {
                 playAgainButton.textContent = 'START OVER';
             } else {
-                setTimeout(() => {
-                    score.textContent = `${currentScore - 1}`;
-                    sessionStorage.setItem('gameScore', score.textContent);
-                }, 2000);
+                score.textContent = `${currentScore - 1}`;
             }
         } else {
             playAgainButton.textContent = 'PLAY AGAIN';
@@ -125,10 +102,6 @@ playAgainButton.addEventListener("click", () => {
     initial.style.display = "grid";
     outcome.style.display = "none";
     restartContainer.style.display = "none";
-    const choices = document.querySelectorAll('.choice');
-        choices.forEach(choice => {
-        choice.classList.remove('winner-glow');
-  });
 });
 
 function playRound(playerSelection, computerSelection) {
