@@ -73,6 +73,7 @@
 body {
     font-size: 1.2rem;
     font-family: 'Fraunces';
+    overflow-x: hidden;
 }
 
 .preview {
@@ -268,6 +269,10 @@ footer {
     grid-template-columns: repeat(4, 1fr);
 }
 
+.white {
+    display: none;
+}
+
 /* Text styling */
 
 p:not(.name) {
@@ -359,6 +364,21 @@ a:hover::after, a:focus::after {
     color: #fff;
     background-color: rgb(255,255,255, 0.4);
 }
+
+/* Additional classes to make the sections appear smoothly */
+
+.prehidden {
+    opacity: 0; 
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+  
+.translated {
+    transform: translateX(50%);
+}
+.visible {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 
 /* Adjustment for small screens */
 
