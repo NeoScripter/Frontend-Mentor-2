@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
       threshold: 0.1
     });
   
-    document.querySelectorAll('.prehidden').forEach(div => {
+    document.querySelectorAll('.sliding').forEach(div => {
       observer.observe(div);
     });
   });
@@ -49,9 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Displaying the collapsed navigation when the user hovers over the image */
 
   document.addEventListener('DOMContentLoaded', function() {
-    const shareBtn = document.querySelector('.selector');
+    const shareBtn = document.querySelector('.mobile_logo');
     const arrow = document.querySelector('.arrow');
-    const socialLinks = document.querySelector('.collapsed-nav');
+    const socialLinks = document.querySelector('.mobile_nav');
     let timeoutId;
 
     function showSocialLinks() {
