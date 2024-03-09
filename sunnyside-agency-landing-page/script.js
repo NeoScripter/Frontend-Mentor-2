@@ -45,3 +45,30 @@ document.addEventListener('DOMContentLoaded', () => {
       observer.observe(div);
     });
   });
+
+  /* Displaying the collapsed navigation when the user hovers over the image */
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const shareBtn = document.querySelector('.selector');
+    const arrow = document.querySelector('.arrow');
+    const socialLinks = document.querySelector('.collapsed-nav');
+    let timeoutId;
+
+    function showSocialLinks() {
+        clearTimeout(timeoutId); 
+        socialLinks.style.display = 'block';
+        arrow.style.display = 'none';
+    }
+
+    function hideSocialLinks() {
+        timeoutId = setTimeout(function() {
+            socialLinks.style.display = 'none';
+            arrow.style.display = 'block';
+        }, 500);
+    }
+
+    shareBtn.addEventListener('mouseover', showSocialLinks);
+    shareBtn.addEventListener('mouseout', hideSocialLinks);
+    socialLinks.addEventListener('mouseover', showSocialLinks);
+    socialLinks.addEventListener('mouseout', hideSocialLinks);
+});
