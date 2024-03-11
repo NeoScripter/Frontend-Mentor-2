@@ -24,7 +24,6 @@ body {
     padding: 0.5rem;
     margin: 0;
     width: clamp(10rem, 80%, 30rem);
-    background-color: #B91325;
     border-radius: 10px;
     border: 1.5px solid rgb(146, 18, 18);
     box-shadow: 
@@ -32,7 +31,7 @@ body {
     inset 3px 3px 5px rgba(255, 255, 255, 0.7),
     inset -3px -3px 5px rgba(0, 0, 0, 0.7);
     background-image: 
-        linear-gradient(to bottom right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 30%, rgba(0, 0, 0, 0.15) 100%);
+        linear-gradient(to bottom right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 30%, rgba(0, 0, 0, 0.15) 100%), linear-gradient(to bottom right, #B91325 0%, #B71326 50%);
     background-position: top left;
 }
 
@@ -88,6 +87,7 @@ h1 {
 }
 
 .panel > * {
+    cursor: pointer;
     font-size: clamp(1rem, 4vmin, 2rem);
     font-weight: 800;
     color: #F8F6C6;
@@ -139,12 +139,14 @@ option {
     font-weight: 800;
     margin: 0;
     background-color: #B91325;
+    cursor: pointer;
 }
 
 #screen {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 #screen > * {
-    border: 1px solid black;
+    background-color: white;
 }
