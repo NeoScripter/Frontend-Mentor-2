@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Calculator app</title>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="main">
+    <div class="header_wrapper">
+      <div class="header">
+        <div class="logo">calc</div>
+        <div class="theme_toggle">
+          <div class="theme_logo">THEME</div>
+          <div class="theme_wrapper">
+            <div class="modes">1 2 3</div>
+            <div class="toggle_switch">
+              <input type="radio" id="modeStandard" name="theme" value="standard" checked>
+              <input type="radio" id="modeLight" name="theme" value="light">
+              <input type="radio" id="modeDark" name="theme" value="dark">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen">
+        <input type="text" id="inputField">
+      </div>
+    </div>
+    <div class="panel">
+      <button class="zero">0</button>
+      <button class="one">1</button>
+      <button class="two">2</button>
+      <button class="three">3</button>
+      <button class="four">4</button>
+      <button class="five">5</button>
+      <button class="six">6</button>
+      <button class="seven">7</button>
+      <button class="eight">8</button>
+      <button class="nine">9</button>
+      <button class="slash">/</button>
+      <button class="period">.</button>
+      <button class="reset">RESET</button>
+      <button class="equal">=</button>
+      <button class="delete">DEL</button>
+      <button class="plus">+</button>
+      <button class="minus">-</button>
+      <button class="multiply">x</button>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/NeoScripter">Ilya Andreev</a>.
+  </div>
+</body>
+</html>

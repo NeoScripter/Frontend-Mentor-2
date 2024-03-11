@@ -1,0 +1,211 @@
+
+:root {
+    --fs-0: clamp(1rem, 0.6735rem + 1.6327vi, 1.5rem);
+    --fs-1: clamp(1.125rem, 0.6218rem + 2.5159vi, 2.666rem);
+    --fs-2: clamp(1.2656rem, 0.5185rem + 3.2358vi, 3rem);
+    --fs-3: clamp(1.4238rem, 0.3419rem + 5.4096vi, 4.7372rem);
+    --fs-4: clamp(1.6018rem, 0.0629rem + 7.6945vi, 6.3147rem);
+    --fs-5: clamp(1.802rem, -0.3581rem + 10.8007vi, 8.4175rem);
+    --fw-1: 700;
+
+    --main-bg-theme1: hsl(222, 26%, 31%);
+    --toggle-keypad-bg-theme1: hsl(223, 31%, 20%);
+    --screen-bg-theme1: hsl(224, 36%, 15%);
+    --key-bg1-theme1: hsl(225, 21%, 49%);
+    --key-bg2-theme1: hsl(30, 25%, 89%);
+    --key-shadow1-theme1: hsl(224, 28%, 35%);
+    --key-shadow2-theme1: hsl(28, 16%, 65%);
+    --key-bg-toggle-theme1: hsl(6, 63%, 50%);
+    --key-shadow3-theme1: hsl(6, 70%, 34%);
+    --text1-theme1: hsl(221, 14%, 31%);
+    --text2-theme1: hsl(0, 0%, 100%);
+
+    --main-bg-theme2: hsl(0, 0%, 90%);
+    --toggle-keypad-bg-theme2: hsl(0, 5%, 81%);
+    --screen-bg-theme2: hsl(0, 0%, 93%);
+    --key-bg1-theme2: hsl(185, 42%, 37%);
+    --key-bg2-theme2: hsl(45, 7%, 89%);
+    --key-shadow1-theme2: hsl(25, 99%, 27%);
+    --key-shadow2-theme2: hsl(35, 11%, 61%);
+    --key-bg-toggle-theme2: hsl(25, 98%, 40%);
+    --key-shadow3-theme2: hsl(6, 70%, 34%);
+    --text1-theme2: hsl(60, 10%, 19%);
+    --text2-theme2: hsl(0, 0%, 100%);
+
+    --main-bg-theme3: hsl(268, 75%, 9%);
+    --toggle-keypad-bg-theme3: hsl(268, 71%, 12%);
+    --screen-bg-theme3: hsl(268, 71%, 12%);
+    --key-bg1-theme3: hsl(281, 89%, 26%);
+    --key-bg2-theme3: hsl(30, 25%, 89%);
+    --key-shadow1-theme3: hsl(285, 91%, 52%);
+    --key-shadow2-theme3: hsl(268, 47%, 21%);
+    --key-bg-toggle-theme3: hsl(176, 100%, 44%);
+    --key-shadow3-theme3: hsl(290, 70%, 36%);
+    --text1-theme3: hsl(52, 100%, 62%);
+    --text2-theme3: hsl(198, 20%, 13%);
+    --text3-theme3: hsl(0, 0%, 100%);
+}
+
+@font-face {
+    font-family: 'League Spartan';
+    src: url(fonts/LeagueSpartan-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'League Spartan Regular';
+    src: url(fonts/LeagueSpartan-SemiBold.ttf);
+}
+
+* {
+    margin: 0;
+    line-height: calc(1em + 0.5rem);
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+body {
+    font-family: 'League Spartan';
+    min-height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-content: center;
+    background-color: var(--main-bg-theme1);
+}
+
+.main {
+    padding: calc(5px + 1vw);
+    border: 2px solid var(--toggle-keypad-bg-theme1);
+    border-radius: 5px;
+    width: calc(150px + 20vw);
+    height: calc(300px + 15vw);
+    gap: calc(5px + 1vw);
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "head"
+    "panel"
+    "panel";
+}
+
+.header {
+    display: flex;
+}
+
+.theme_toggle {
+    display: flex;
+}
+
+.screen {
+    background-color: var(--screen-bg-theme1);
+    padding-inline: calc(5px + 1vw);
+    padding-block: calc(10px + 2vw);
+    display: grid;
+    place-content: center;
+    border-radius: 5px;
+}
+
+#inputField {
+    background-color: var(--screen-bg-theme1);
+    text-align: right;
+    font-size: var(--fs-2);
+    width: 98%;
+    color: var(--text2-theme1);
+    border: none;
+    font-family: 'League Spartan Regular';
+}
+
+.panel {
+    padding: calc(5px + 1vw);
+    border-radius: 5px;
+    display: grid;
+    gap: calc(5px + 1vw);
+    background-color: var(--toggle-keypad-bg-theme1);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "seven eight nine delete"
+    "four five six plus"
+    "one two three minus"
+    "period zer slash mult"
+    "reset reset equal equal";
+}
+
+button {
+    color: var(--toggle-keypad-bg-theme1);
+    font-size: var(--fs-0);
+    padding-top: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--key-bg2-theme1);
+    box-shadow: -1px 1px 0 var(--key-shadow2-theme1), -2px 2px 0 var(--key-shadow2-theme1), -3px 3px 0 var(--key-shadow2-theme1), -4px 4px 0 var(--key-shadow2-theme1);
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+button:active {
+    box-shadow: -1px 1px 0 var(--key-shadow2-theme1), -2px 2px 0 var(--key-shadow2-theme1);
+    transform: scale(0.9);
+}
+
+@media screen and (min-width: 500px) {
+    .main {
+        width: 400px;
+        height: 600px;
+        gap: 10px;
+    }
+    .screen {
+        padding-inline: 15px;
+        padding-block: 45px;
+    }
+    #inputField {
+        font-size: 56px;
+    }
+    .panel {
+        gap: 20px;
+        padding: 20px;
+    }
+    button {
+        font-size: 32px;
+    }
+}
+
+.header_wrapper { grid-area: head;}
+.panel { grid-area: panel;}
+.zero { grid-area: zer;}
+.one { grid-area: one;}
+.two { grid-area: two;}
+.three { grid-area: three;}
+.four { grid-area: four;}
+.five { grid-area: five;}
+.six { grid-area: six;}
+.seven { grid-area: seven;}
+.eight { grid-area: eight;}
+.nine { grid-area: nine;}
+.slash { grid-area: slash;}
+.period { grid-area: period;}
+.reset { grid-area: reset;}
+.equal { grid-area: equal;}
+.delete { grid-area: delete;}
+.plus { grid-area: plus;}
+.minus { grid-area: minus;}
+.multiply { grid-area: mult;}
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    color: hsl(227, 16%, 89%); 
+}
+
+.attribution a {
+    color: bisque;
+}
