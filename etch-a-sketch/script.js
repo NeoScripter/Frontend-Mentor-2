@@ -3,6 +3,7 @@ const clearBtn = document.getElementById('clear');
 const setBtn  = document.getElementById('set');
 const screen = document.getElementById('screen');
 const selectedColor = document.getElementById('optionSelect');
+const input = document.getElementById('input');
 
 let color = 'black';
 
@@ -29,8 +30,15 @@ function applyMouseOverEffectToSquares() {
 applyMouseOverEffectToSquares();
 
 let numberOfSquares = 4;
-const input = document.getElementById('input').value;
-setBtn.addEventListener('click', function() {
+
+setBtn.addEventListener('click', processSetBtn);
+input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        processSetBtn();
+    }
+});
+
+function processSetBtn() {
     const input = document.getElementById('input');
     let num = parseInt(input.value, 10);
 
@@ -58,7 +66,7 @@ setBtn.addEventListener('click', function() {
         applyMouseOverEffectToSquares();
         input.value = '';
     }
-});
+}
 
 
 clearBtn.addEventListener('click', function() {
