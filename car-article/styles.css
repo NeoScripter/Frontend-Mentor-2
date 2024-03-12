@@ -1,0 +1,118 @@
+
+ @font-face {
+    font-family: 'Lexend Deca';
+    src: url(fonts/LexendDeca-VariableFont_wght.ttf);
+ }
+
+ @font-face {
+    font-family: 'Big Shoulders Display';
+    src: url(fonts/BigShouldersDisplay-VariableFont_wght.ttf);
+ }
+
+ body {
+    font-family: 'Lexend Deca';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: hsl(0, 0%, 95%);
+ }
+
+ .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    border-radius: 10px;
+ }
+
+ .internal {
+    padding: 2rem;
+    color: hsla(0, 0%, 100%, 0.75);
+    flex-basis: 12rem;
+ }
+
+.one {
+    background-color: hsl(31, 77%, 52%);
+ }
+
+ .two {
+    background-color: hsl(184, 100%, 22%);
+ }
+
+ .three {
+    background-color: hsl(179, 100%, 13%);
+ }
+
+ /* Text styles */
+ h1 {
+    font-family: 'Big Shoulders Display';
+    text-transform: uppercase;
+    color: hsl(0, 0%, 95%);
+ }
+
+ p {
+    font-size: .7rem;
+    margin-bottom: 2rem;
+ }
+
+ /* Link design */
+.internal a {
+    display: inline-block;
+    font-size:.8rem;
+    margin-top: 2rem;
+    text-decoration: none;
+    background-color: hsl(0, 0%, 95%);
+    padding: .8em 2em;
+    border-radius: 25px;
+    border: 2px solid hsl(0, 0%, 95%);
+}
+
+.one a {
+   color: hsl(31, 77%, 52%);
+}
+
+.two a {
+   color: hsl(184, 100%, 22%);
+}
+
+.three a {
+   color: hsl(179, 100%, 13%);
+}
+
+a:hover, a:focus {
+   background-color: transparent;
+   color: hsl(0, 0%, 95%);
+}
+
+/* Responsive design style */
+@media (max-width: 49rem) and (min-width: 33rem) {
+   .one {
+      border-radius: 10px 0 0 10px;
+   }
+   .two {
+      border-radius: 0 10px 10px 0;
+   }
+   .three {
+      border-radius: 0 0 10px 10px;
+   }
+}
+
+@media (max-width: 33rem) {
+   .one {
+      border-radius: 10px 10px 0 0;
+   }
+   .three {
+      border-radius: 0 0 10px 10px;
+   }
+}
+
+@media (min-width: 49rem) {
+   .one {
+      border-radius: 10px 0 0 10px;
+   }
+   .three {
+      border-radius: 0 10px 10px 0;
+   }
+}

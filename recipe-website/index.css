@@ -1,0 +1,58 @@
+
+.box {
+    background-image: url(images/up-bound.bmp);
+    background-attachment: fixed;
+    background-position: right;
+    width: fit-content(100%);
+    height: 50vh;
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-family: 'Kaushan Script', cursive;
+    
+}
+
+body {
+    background-color: rgb(21, 20, 20);
+    margin: 0;
+    padding: 0;
+}
+
+.image-container {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .image-link {
+    position: relative;
+    display: inline-block;
+    margin: 0.1rem;
+  }
+  
+  .image-link img {
+    width: 12rem;
+    height: 16rem;
+    margin: 0.1rem;
+    object-fit: cover; 
+  }
+  
+  .image-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    color: #f0dfdf;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-family: 'Kaushan Script', cursive;
+  }

@@ -1,1 +1,0 @@
-My solution to the Base Apparel coming soon exercise.
