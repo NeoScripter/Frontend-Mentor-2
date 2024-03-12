@@ -1,1 +1,0 @@
-My solution to the Testimonials grid section exercise.
