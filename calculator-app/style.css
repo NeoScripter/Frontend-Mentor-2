@@ -195,6 +195,7 @@ body {
     background-color: var(--screen-bg-theme1);
     text-align: right;
     font-size: var(--fs-4);
+    min-height: 30px;
     width: 98%;
     color: var(--text2-theme1);
     font-family: 'League Spartan Semi-Bold';
@@ -272,6 +273,7 @@ button:active {
     }
     #inputField {
         font-size: 56px;
+        min-height: 55px;
     }
     .panel {
         gap: 20px;
