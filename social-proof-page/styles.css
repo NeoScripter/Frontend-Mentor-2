@@ -1,0 +1,123 @@
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/Outfit-VariableFont_wght.ttf');
+  }
+
+@font-face {
+    font-family: 'Young Serif';
+    src: url('assets/fonts/young-serif/YoungSerif-Regular.ttf');
+}
+
+body {
+    margin: 0;
+    padding-block: 10vh;
+    font-family: 'Outfit';
+    font-weight: 400;
+    color: hsl(12, 2%, 40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: hsl(30, 54%, 90%);
+}
+
+body > div {
+    background-color: hsl(0, 0%, 100%);
+    max-width: 35em;
+    height: auto;
+    padding: 1.8em;
+    border-radius: 10px;
+}
+
+h1, h3 {
+    color: hsl(24, 5%, 18%);
+    font-family: 'Young Serif';
+    font-weight: 600;
+    font-size: 1.6em;    
+    letter-spacing: 1px;
+}
+
+h3, h2 {
+    font-size: 1.2em;
+}
+
+p, li {
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+ul, ol {
+    padding-inline: 1.5em;
+}
+li {
+    margin-block: .5em;
+    padding-left: 1em;
+}
+
+.mid-section {
+    border-bottom: 1.5px solid hsl(30, 18%, 87%);
+}
+.inner-container {
+    background-color: hsl(330, 100%, 98%);
+    padding: 1em;
+    border-radius: 10px;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+ol li {
+    color: hsl(14, 45%, 36%);
+    font-weight: 700;
+}
+
+.instruction {
+    font-weight: 400;
+    color: hsl(12, 2%, 40%);
+}
+
+span {
+    color: hsl(24, 5%, 18%);
+    font-weight: 700;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 14px;
+}
+
+.even, h2, h3 {
+    color: hsl(14, 45%, 36%);
+    font-weight: 600;
+}
+
+h2 {
+    margin: 0;
+    color: hsl(332, 51%, 32%);
+}
+
+.grid-container > * {
+    padding: .7em 1.5em;
+    border-bottom: 1.5px solid hsl(30, 18%, 87%);
+}
+
+
+@media screen and (max-width: 650px) {
+    body {
+        padding: 0;
+    }
+
+    body > div {
+        padding-top: 0;
+    }
+    img {
+        border-radius: 0px;
+        max-width: calc(100% + 3.6em);
+        margin-left: -1.8em;
+        display: block;
+        height: auto; 
+    }
+}

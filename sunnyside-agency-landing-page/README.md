@@ -1,1 +1,0 @@
-My solution to the Sunnyside landing page exerice.

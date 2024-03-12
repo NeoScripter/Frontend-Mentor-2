@@ -1,0 +1,144 @@
+/* Imported Fonts */
+
+@font-face {
+    font-family: "Fraunces";
+    src: url(fonts/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf);
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+/* Main layout */
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat';
+    min-height: 100vh;
+    background-color: hsl(30, 38%, 92%);
+}
+
+.wrapper {
+    display: flex;
+    max-width: 30em;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+}
+
+.left, .right {
+    box-sizing: border-box;
+    width: 50%;
+}
+
+.left img {
+    width: 100%;
+    height: auto; 
+    display: block;
+    border-radius: 10px 0 0 10px;
+}
+
+.right {
+    padding: 2em;
+    font-size: .8rem;
+    padding-bottom: 0;
+}
+
+.price {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.link-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Text settings */
+
+p {
+    color: hsl(228, 12%, 48%);
+    font-weight: 500;
+    word-spacing: .1rem;
+    font-size: 0.7rem;
+    line-height: 1.6;
+}
+
+p:first-of-type {
+    margin: 0;
+    letter-spacing: .3rem;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-family: 'Fraunces';
+    line-height: 1;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-block: .4rem;
+    font-family: 'Fraunces';
+    color: hsl(158, 36%, 37%);
+}
+
+.price div {
+    color: hsl(228, 12%, 48%);
+    font-weight: 500;
+    font-size: 0.7rem;
+    text-decoration: line-through;
+}
+
+/* Styling the link */
+.right a {
+    margin-block: .8rem;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: hsl(158, 36%, 37%);
+    text-decoration: none;
+    text-align: center;
+    width: 12rem;
+    padding-block: .6rem;
+    color: #fff;
+    background-image: url(images/icon-cart.svg);
+    background-repeat: no-repeat;
+    background-position: 22% 50%;
+    background-size: .8rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.right a:active {
+    background-color: hsl(159, 32%, 21%);
+}
+
+/* Responsive image settings */
+
+@media (max-width: 500px) {
+    .wrapper {
+        flex-direction: column;
+        margin-inline: 1rem;
+    }
+    .left, .right {
+        width: 100%;
+    }
+    .right {
+        padding-top: 1rem;
+    }
+    h1 {
+        margin-block: .5rem;
+    }
+    h2 {
+        margin: 0;
+    }
+    .left img {
+        border-radius: 10px 10px 0 0;    
+    }
+  }
