@@ -1,0 +1,1 @@
+My solution to the Article preview component exercise

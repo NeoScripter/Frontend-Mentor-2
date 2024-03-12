@@ -177,12 +177,12 @@ footer {
 
 /* Responsive design */
 
-@media (max-width: 800px) and (min-width: 500px) {
+@media screen and (max-width: 800px) and (min-width: 500px) {
     .description {
         padding-inline: 4vw;
     }
 }
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
     #desktop-image{
         display: none;
     }
