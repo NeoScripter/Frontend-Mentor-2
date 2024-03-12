@@ -147,4 +147,5 @@ option {
 
 #screen > * {
     background-color: white;
+    border: .5px solid rgb(182, 182, 234, 0.3);
 }

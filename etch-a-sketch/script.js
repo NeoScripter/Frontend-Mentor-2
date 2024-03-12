@@ -15,19 +15,33 @@ function random(number) {
     return Math.floor(Math.random() * (number + 1));
   }
 
-function applyMouseOverEffectToSquares() {
-    document.querySelectorAll('.square').forEach(square => {
-      square.addEventListener('mouseover', function() {
-          if (color === 'random') {
-              this.style.backgroundColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-          } else {
-              this.style.backgroundColor = color;
-          }
-      });
+  function setupDrawing() {
+    const container = document.querySelector('.subsreen');
+    container.addEventListener('mouseover', function(event) {
+        if (event.target.classList.contains('square')) {
+            changeColor(event.target);
+        }
     });
-  }
 
-applyMouseOverEffectToSquares();
+    container.addEventListener('touchmove', function(event) {
+        event.preventDefault(); 
+        const touch = event.touches[0]; 
+        const targetElement = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (targetElement && targetElement.classList.contains('square')) {
+            changeColor(targetElement); 
+        }
+    }, { passive: false });
+}
+
+function changeColor(element) {
+    if (color === 'random') {
+        element.style.backgroundColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+    } else {
+        element.style.backgroundColor = color;
+    }
+}
+
+setupDrawing();
 
 let numberOfSquares = 4;
 
@@ -45,8 +59,8 @@ function processSetBtn() {
     if (!isNaN(num)) {
         if (num < 2) {
             num = 2;
-        } else if (num > 120) {
-            num = 120;
+        } else if (num > 150) {
+            num = 150;
         }
 
         const currentSquares = document.querySelectorAll('.square');
@@ -63,7 +77,6 @@ function processSetBtn() {
             screen.appendChild(newSquare);
         }
 
-        applyMouseOverEffectToSquares();
         input.value = '';
     }
 }
