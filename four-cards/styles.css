@@ -1,0 +1,92 @@
+
+body {
+    display: block;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    background-color: hsl(0, 0%, 98%);
+}
+
+.header {
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 200;
+    color: hsl(234, 12%, 34%);
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin: 1rem;
+    font-weight: 600;
+    color: hsl(234, 12%, 34%);
+}
+
+span {
+    font-weight: 600;
+}
+
+p {
+    color: hsl(229, 6%, 66%);
+    margin-inline: 1rem;
+}
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    max-width: 1000px; /* to keep the gap between vertical blocks from getting too big */ 
+    margin: 0 auto;
+    gap: 1.5rem;
+}
+
+.item {
+    height: auto;
+    max-width: 300px;
+    min-width: 200px;
+    padding-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 
+    2px 8px 20px 3px rgba(0,0,0,0.1),
+    -2px 8px 20px 3px rgba(0,0,0,0.1);
+}
+
+#middle {
+    display: grid;
+    gap: 2rem;
+}
+@media (max-width: 600px) {
+    .footer {
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+/* setting icons */
+
+.icon {
+    display: block;
+    margin-right: 1.5rem;
+    margin-left: auto;
+    max-width: 3rem;
+}
+
+#left .item {
+    border-top: 3px solid hsl(180, 62%, 55%);
+}
+
+#middle .item:first-child {
+    border-top: 3px solid hsl(0, 78%, 62%);
+}
+
+#middle .item:last-child {
+    border-top: 3px solid hsl(34, 97%, 64%);
+}
+
+#right .item {
+    border-top: 3px solid hsl(212, 86%, 64%);
+}
