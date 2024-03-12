@@ -44,6 +44,10 @@
     --text1-theme3: hsl(52, 100%, 62%);
     --text2-theme3: hsl(198, 20%, 13%);
     --text3-theme3: hsl(0, 0%, 100%);
+
+    --box-sh-dk-yellow: -1px 1px 0 var(--key-shadow2-theme1), -2px 2px 0 var(--key-shadow2-theme1), -3px 3px 0 var(--key-shadow2-theme1), -4px 4px 0 var(--key-shadow2-theme1);
+    --box-sh-mb-yellow: -1px 1px 0 var(--key-shadow2-theme1), -2px 2px 0 var(--key-shadow2-theme1);
+    --box-sd-mb-pressed-yellow: -1px 1px 0 var(--key-shadow2-theme1);
 }
 
 @font-face {
@@ -58,7 +62,6 @@
 
 * {
     margin: 0;
-    line-height: calc(1em + 0.5rem);
 }
 
 img, picture, video, canvas, svg {
@@ -92,10 +95,6 @@ body {
     gap: calc(5px + 1vw);
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: 
-    "head"
-    "panel"
-    "panel";
 }
 
 .header {
@@ -110,19 +109,19 @@ body {
     background-color: var(--screen-bg-theme1);
     padding-inline: calc(5px + 1vw);
     padding-block: calc(10px + 2vw);
-    display: grid;
-    place-content: center;
     border-radius: 5px;
 }
 
 #inputField {
     background-color: var(--screen-bg-theme1);
     text-align: right;
-    font-size: var(--fs-2);
+    font-size: var(--fs-4);
     width: 98%;
     color: var(--text2-theme1);
-    border: none;
     font-family: 'League Spartan Semi-Bold';
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: clip;
 }
 
 .panel {
@@ -132,12 +131,11 @@ body {
     gap: calc(5px + 1vw);
     background-color: var(--toggle-keypad-bg-theme1);
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: 
-    "seven eight nine delete"
-    "four five six plus"
-    "one two three minus"
-    "period zer slash mult"
-    "reset reset equal equal";
+    grid-row: span 2;
+}
+
+.reset, .equal {
+    grid-column: span 2;
 }
 
 button {
@@ -147,12 +145,12 @@ button {
     border-radius: 5px;
     border: none;
     background-color: var(--key-bg2-theme1);
-    box-shadow: -1px 1px 0 var(--key-shadow2-theme1), -2px 2px 0 var(--key-shadow2-theme1), -3px 3px 0 var(--key-shadow2-theme1), -4px 4px 0 var(--key-shadow2-theme1);
+    box-shadow: var(--box-sh-mb-yellow);
     transition: transform 0.1s, background-color 0.2s;
 }
 
 button:active {
-    box-shadow: -1px 1px 0 var(--key-shadow2-theme1), -2px 2px 0 var(--key-shadow2-theme1);
+    box-shadow: var(--box-sd-mb-pressed-yellow);
     transform: scale(0.9);
 }
 
@@ -175,37 +173,21 @@ button:active {
     }
     button {
         font-size: 32px;
+        box-shadow: var(--box-sh-dk-yellow);
+    }
+    button:active {
+        box-shadow: var(--box-sh-mb-yellow);
     }
 }
-
-.header_wrapper { grid-area: head;}
-.panel { grid-area: panel;}
-.zero { grid-area: zer;}
-.one { grid-area: one;}
-.two { grid-area: two;}
-.three { grid-area: three;}
-.four { grid-area: four;}
-.five { grid-area: five;}
-.six { grid-area: six;}
-.seven { grid-area: seven;}
-.eight { grid-area: eight;}
-.nine { grid-area: nine;}
-.slash { grid-area: slash;}
-.period { grid-area: period;}
-.reset { grid-area: reset;}
-.equal { grid-area: equal;}
-.delete { grid-area: delete;}
-.plus { grid-area: plus;}
-.minus { grid-area: minus;}
-.multiply { grid-area: mult;}
-
 
 .attribution { 
     font-size: 11px; 
     text-align: center;
     color: hsl(227, 16%, 89%); 
+    margin-top: 5px;
 }
 
 .attribution a {
     color: bisque;
+    line-height: 1.2;
 }
