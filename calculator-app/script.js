@@ -51,15 +51,17 @@ document.querySelector('.equal').addEventListener('click', function() {
         const numOperand1 = parseFloat(operands[0]);
         const numOperand2 = parseFloat(operands[1]);
         
-        switch (operation) {
-            case '+': result = numOperand1 + numOperand2; break;
-            case '-': result = numOperand1 - numOperand2; break;
-            case '*': result = numOperand1 * numOperand2; break;
-            case '/': result = numOperand1 / numOperand2; break;
+        if (numOperand2 !== 0) {
+            switch (operation) {
+                case '+': result = numOperand1 + numOperand2; break;
+                case '-': result = numOperand1 - numOperand2; break;
+                case '*': result = numOperand1 * numOperand2; break;
+                case '/': result = numOperand1 / numOperand2; break;
+            }
+            const rounded = Math.ceil(result * 10) / 10;
+            screen.textContent = rounded.toString();
+            operation = '';
         }
-        const rounded = Math.ceil(result * 10) / 10;
-        screen.textContent = rounded.toString();
-        operation = '';
     }
 });
 
