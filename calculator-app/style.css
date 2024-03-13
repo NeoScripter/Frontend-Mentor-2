@@ -8,54 +8,90 @@
     --fs-5: clamp(1.802rem, -0.3581rem + 10.8007vi, 8.4175rem);
     --fw-1: 700;
 
-    --main-bg-theme1: hsl(222, 26%, 31%);
-    --toggle-keypad-bg-theme1: hsl(223, 31%, 20%);
-    --screen-bg-theme1: hsl(224, 36%, 15%);
-    --key-bg1-theme1: hsl(225, 21%, 49%);
-    --key-bg2-theme1: hsl(30, 25%, 89%);
-    --key-shadow1-theme1: hsl(224, 28%, 35%);
-    --key-shadow2-theme1: hsl(28, 16%, 65%);
-    --key-bg-toggle-theme1: hsl(6, 63%, 50%);
-    --key-shadow3-theme1: hsl(6, 70%, 34%);
-    --text1-theme1: hsl(221, 14%, 31%);
-    --text2-theme1: hsl(0, 0%, 100%);
+    --text-color-top: hsl(0, 0%, 100%);
+    --text-color-bottom: hsl(221, 14%, 31%);
+    --body-bg-color: hsl(222, 26%, 31%);
+    --toggle-keypad-bg-color: hsl(223, 31%, 20%);
+    --screen-bg-color: hsl(224, 36%, 15%);
+    --button-bg: hsl(30, 25%, 89%);
+    --button-shadow: hsl(28, 16%, 65%);
+    --del-reset-bg: hsl(225, 21%, 49%);
+    --del-reset-color: hsl(0, 0%, 100%);
+    --del-reset-shadow: hsl(224, 28%, 35%);
+    --equal-bg: hsl(6, 63%, 50%);
+    --equal-color: hsl(0, 0%, 100%);
+    --equal-shadow: hsl(6, 70%, 34%);
+    --toggle-color: hsl(6, 63%, 50%);
 
-    --main-bg-theme2: hsl(0, 0%, 90%);
-    --toggle-keypad-bg-theme2: hsl(0, 5%, 81%);
-    --screen-bg-theme2: hsl(0, 0%, 93%);
-    --key-bg1-theme2: hsl(185, 42%, 37%);
-    --key-bg2-theme2: hsl(45, 7%, 89%);
-    --key-shadow1-theme2: hsl(25, 99%, 27%);
-    --key-shadow2-theme2: hsl(35, 11%, 61%);
-    --key-bg-toggle-theme2: hsl(25, 98%, 40%);
-    --key-shadow3-theme2: hsl(6, 70%, 34%);
-    --text1-theme2: hsl(60, 10%, 19%);
-    --text2-theme2: hsl(0, 0%, 100%);
+    --box-sh-dk-button: -1px 1px 0 var(--button-shadow), -2px 2px 0 var(--button-shadow), -3px 3px 0 var(--button-shadow), -4px 4px 0 var(--button-shadow);
+    --box-sh-mb-button: -1px 1px 0 var(--button-shadow), -2px 2px 0 var(--button-shadow);
+    --box-sd-mb-pressed-button: -1px 1px 0 var(--button-shadow);
 
-    --main-bg-theme3: hsl(268, 75%, 9%);
-    --toggle-keypad-bg-theme3: hsl(268, 71%, 12%);
-    --screen-bg-theme3: hsl(268, 71%, 12%);
-    --key-bg1-theme3: hsl(281, 89%, 26%);
-    --key-bg2-theme3: hsl(30, 25%, 89%);
-    --key-shadow1-theme3: hsl(285, 91%, 52%);
-    --key-shadow2-theme3: hsl(268, 47%, 21%);
-    --key-bg-toggle-theme3: hsl(176, 100%, 44%);
-    --key-shadow3-theme3: hsl(290, 70%, 36%);
-    --text1-theme3: hsl(52, 100%, 62%);
-    --text2-theme3: hsl(198, 20%, 13%);
-    --text3-theme3: hsl(0, 0%, 100%);
+    --box-sh-dk-del-reset: -1px 1px 0 var(--del-reset-shadow), -2px 2px 0 var(--del-reset-shadow), -3px 3px 0 var(--del-reset-shadow), -4px 4px 0 var(--del-reset-shadow);
+    --box-sh-mb-del-reset: -1px 1px 0 var(--del-reset-shadow), -2px 2px 0 var(--del-reset-shadow);
+    --box-sd-mb-pressed-del-reset: -1px 1px 0 var(--del-reset-shadow);
 
-    --box-sh-dk-yellow: -1px 1px 0 var(--key-shadow2-theme1), -2px 2px 0 var(--key-shadow2-theme1), -3px 3px 0 var(--key-shadow2-theme1), -4px 4px 0 var(--key-shadow2-theme1);
-    --box-sh-mb-yellow: -1px 1px 0 var(--key-shadow2-theme1), -2px 2px 0 var(--key-shadow2-theme1);
-    --box-sd-mb-pressed-yellow: -1px 1px 0 var(--key-shadow2-theme1);
+    --box-sh-dk-equal: -1px 1px 0 var(--equal-shadow), -2px 2px 0 var(--equal-shadow), -3px 3px 0 var(--equal-shadow), -4px 4px 0 var(--equal-shadow);
+    --box-sh-mb-equal: -1px 1px 0 var(--equal-shadow), -2px 2px 0 var(--equal-shadow);
+    --box-sd-mb-pressed-equal: -1px 1px 0 var(--equal-shadow);
+}
 
-    --box-sh-dk-blue: -1px 1px 0 var(--key-shadow1-theme1), -2px 2px 0 var(--key-shadow1-theme1), -3px 3px 0 var(--key-shadow1-theme1), -4px 4px 0 var(--key-shadow1-theme1);
-    --box-sh-mb-blue: -1px 1px 0 var(--key-shadow1-theme1), -2px 2px 0 var(--key-shadow1-theme1);
-    --box-sd-mb-pressed-blue: -1px 1px 0 var(--key-shadow1-theme1);
+[data-theme="light"] {
+    --text-color-top: hsl(221, 14%, 31%);
+    --text-color-bottom: hsl(221, 14%, 31%);
+    --body-bg-color: hsl(0, 0%, 90%);
+    --toggle-keypad-bg-color: hsl(0, 5%, 81%);
+    --screen-bg-color: hsl(0, 0%, 93%);
+    --button-bg: hsl(45, 7%, 89%);
+    --button-shadow: hsl(35, 11%, 61%);
+    --del-reset-bg: hsl(185, 42%, 37%);
+    --del-reset-color: hsl(0, 0%, 100%);
+    --del-reset-shadow: hsl(186, 41%, 25%);
+    --equal-bg: hsl(25, 98%, 40%);
+    --equal-color: hsl(0, 0%, 100%);
+    --equal-shadow: hsl(6, 70%, 34%);
+    --toggle-color: hsl(25, 98%, 40%);
 
-    --box-sh-dk-red: -1px 1px 0 var(--key-shadow3-theme1), -2px 2px 0 var(--key-shadow3-theme1), -3px 3px 0 var(--key-shadow3-theme1), -4px 4px 0 var(--key-shadow3-theme1);
-    --box-sh-mb-red: -1px 1px 0 var(--key-shadow3-theme1), -2px 2px 0 var(--key-shadow3-theme1);
-    --box-sd-mb-pressed-red: -1px 1px 0 var(--key-shadow3-theme1);
+    --box-sh-dk-button: -1px 1px 0 var(--button-shadow), -2px 2px 0 var(--button-shadow), -3px 3px 0 var(--button-shadow), -4px 4px 0 var(--button-shadow);
+    --box-sh-mb-button: -1px 1px 0 var(--button-shadow), -2px 2px 0 var(--button-shadow);
+    --box-sd-mb-pressed-button: -1px 1px 0 var(--button-shadow);
+
+    --box-sh-dk-del-reset: -1px 1px 0 var(--del-reset-shadow), -2px 2px 0 var(--del-reset-shadow), -3px 3px 0 var(--del-reset-shadow), -4px 4px 0 var(--del-reset-shadow);
+    --box-sh-mb-del-reset: -1px 1px 0 var(--del-reset-shadow), -2px 2px 0 var(--del-reset-shadow);
+    --box-sd-mb-pressed-del-reset: -1px 1px 0 var(--del-reset-shadow);
+
+    --box-sh-dk-equal: -1px 1px 0 var(--equal-shadow), -2px 2px 0 var(--equal-shadow), -3px 3px 0 var(--equal-shadow), -4px 4px 0 var(--equal-shadow);
+    --box-sh-mb-equal: -1px 1px 0 var(--equal-shadow), -2px 2px 0 var(--equal-shadow);
+    --box-sd-mb-pressed-equal: -1px 1px 0 var(--equal-shadow);
+}
+
+[data-theme="dark"] {
+    --text-color-top: hsl(52, 100%, 62%);
+    --text-color-bottom: hsl(52, 100%, 62%);
+    --body-bg-color: hsl(268, 75%, 9%);
+    --toggle-keypad-bg-color: hsl(268, 71%, 12%);
+    --screen-bg-color: hsl(268, 71%, 12%);
+    --button-bg: hsl(281, 89%, 26%);
+    --button-shadow: hsl(290, 70%, 36%);
+    --del-reset-bg: hsl(290, 70%, 36%);
+    --del-reset-color: hsl(0, 0%, 100%);
+    --del-reset-shadow: hsl(285, 91%, 52%);
+    --equal-bg: hsl(176, 100%, 44%);
+    --equal-color: hsl(281, 89%, 26%);
+    --equal-shadow: hsl(176, 58%, 43%);
+    --toggle-color: hsl(176, 100%, 44%);
+
+    --box-sh-dk-button: -1px 1px 0 var(--button-shadow), -2px 2px 0 var(--button-shadow), -3px 3px 0 var(--button-shadow), -4px 4px 0 var(--button-shadow);
+    --box-sh-mb-button: -1px 1px 0 var(--button-shadow), -2px 2px 0 var(--button-shadow);
+    --box-sd-mb-pressed-button: -1px 1px 0 var(--button-shadow);
+
+    --box-sh-dk-del-reset: -1px 1px 0 var(--del-reset-shadow), -2px 2px 0 var(--del-reset-shadow), -3px 3px 0 var(--del-reset-shadow), -4px 4px 0 var(--del-reset-shadow);
+    --box-sh-mb-del-reset: -1px 1px 0 var(--del-reset-shadow), -2px 2px 0 var(--del-reset-shadow);
+    --box-sd-mb-pressed-del-reset: -1px 1px 0 var(--del-reset-shadow);
+
+    --box-sh-dk-equal: -1px 1px 0 var(--equal-shadow), -2px 2px 0 var(--equal-shadow), -3px 3px 0 var(--equal-shadow), -4px 4px 0 var(--equal-shadow);
+    --box-sh-mb-equal: -1px 1px 0 var(--equal-shadow), -2px 2px 0 var(--equal-shadow);
+    --box-sd-mb-pressed-equal: -1px 1px 0 var(--equal-shadow);
 }
 
 @font-face {
@@ -96,12 +132,13 @@ body {
     width: 100vw;
     display: grid;
     place-content: center;
-    background-color: var(--main-bg-theme1);
+    background-color: var(--body-bg-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .main {
     padding: calc(5px + 1vw);
-    border: 2px solid var(--toggle-keypad-bg-theme1);
+    border: 2px solid var(--toggle-keypad-bg-color);
     border-radius: 5px;
     width: calc(150px + 20vw);
     height: calc(300px + 15vw);
@@ -121,7 +158,7 @@ body {
     height: calc(30px + 2vw);
     align-items: flex-end;
     padding: 1vw;
-    color: var(--text2-theme1);
+    color: var(--text-color-top);
 }
 
 .theme_toggle {
@@ -150,7 +187,7 @@ body {
 }
 
 .toggle_switch {
-    background-color: var(--toggle-keypad-bg-theme1);
+    background-color: var(--toggle-keypad-bg-color);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -176,7 +213,7 @@ body {
     cursor: pointer;
     padding: 7px;
     border-radius: 50%;
-    background-color: var(--key-bg-toggle-theme1);
+    background-color: var(--toggle-color);
 }
 
 
@@ -185,19 +222,19 @@ body {
 }
 
 .screen {
-    background-color: var(--screen-bg-theme1);
+    background-color: var(--screen-bg-color);
     padding-inline: calc(5px + 1vw);
     padding-block: calc(10px + 2vw);
     border-radius: 10px;
 }
 
 #inputField {
-    background-color: var(--screen-bg-theme1);
+    background-color: var(--screen-bg-color);
     text-align: right;
     font-size: var(--fs-4);
     min-height: 30px;
     width: 98%;
-    color: var(--text2-theme1);
+    color: var(--text-color-top);
     font-family: 'League Spartan Semi-Bold';
     overflow: hidden; 
     white-space: nowrap; 
@@ -210,7 +247,7 @@ body {
     border-radius: 5px;
     display: grid;
     gap: calc(5px + 1vw);
-    background-color: var(--toggle-keypad-bg-theme1);
+    background-color: var(--toggle-keypad-bg-color);
     grid-template-columns: repeat(4, 1fr);
     grid-row: span 2;
 }
@@ -220,39 +257,39 @@ body {
 }
 
 button {
-    color: var(--toggle-keypad-bg-theme1);
+    color: var(--text-color-bottom);
     font-size: var(--fs-0);
     padding-top: 5px;
     border-radius: 5px;
     border: none;
-    background-color: var(--key-bg2-theme1);
-    box-shadow: var(--box-sh-mb-yellow);
+    background-color: var(--button-bg);
+    box-shadow: var(--box-sh-mb-button);
     transition: transform 0.1s, background-color 0.2s;
     cursor: pointer;
 }
 
 .reset, .delete {
-    color: var(--text2-theme1);
-    background-color: var(--key-bg1-theme1);
-    box-shadow: var(--box-sh-mb-blue);
+    color: var(--del-reset-color);
+    background-color: var(--del-reset-bg);
+    box-shadow: var(--box-sh-mb-del-reset);
 }
 
 button:active {
-    box-shadow: var(--box-sd-mb-pressed-yellow);
+    box-shadow: var(--box-sd-mb-pressed-button);
     transform: scale(0.9);
 }
 
 .reset:active, .delete:active {
-    box-shadow: var(--box-sd-mb-pressed-blue);
+    box-shadow: var(--box-sd-mb-pressed-del-reset);
 }
 
 .equal {
-    color: var(--text2-theme1);
-    background-color: var(--key-bg-toggle-theme1);
-    box-shadow: var(--box-sh-mb-red);
+    color: var(--equal-color);
+    background-color: var(--equal-bg);
+    box-shadow: var(--box-sh-mb-equal);
 }
 .equal:active {
-    box-shadow: var(--box-sd-mb-pressed-red);
+    box-shadow: var(--box-sd-mb-pressed-equal);
 }
 
 @media screen and (min-width: 500px) {
@@ -281,22 +318,22 @@ button:active {
     }
     button {
         font-size: 32px;
-        box-shadow: var(--box-sh-dk-yellow);
+        box-shadow: var(--box-sh-dk-button);
     }
     button:active {
-        box-shadow: var(--box-sh-mb-yellow);
+        box-shadow: var(--box-sh-mb-button);
     }
     .reset, .delete {
-        box-shadow: var(--box-sh-dk-blue);
+        box-shadow: var(--box-sh-dk-del-reset);
     }
     .reset:active, .delete:active {
-        box-shadow: var(--box-sh-mb-blue);
+        box-shadow: var(--box-sh-mb-del-reset);
     }
     .equal {
-        box-shadow: var(--box-sh-dk-red);
+        box-shadow: var(--box-sh-dk-equal);
     }
     .equal:active {
-        box-shadow: var(--box-sh-mb-red);
+        box-shadow: var(--box-sh-mb-equal);
     }
 }
 

@@ -62,3 +62,12 @@ document.querySelector('.equal').addEventListener('click', function() {
         operation = '';
     }
 });
+
+document.querySelectorAll('.toggle_switch input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+      if (this.checked) {
+        document.body.setAttribute('data-theme', this.value);
+      }
+    });
+  });
+  
