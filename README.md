@@ -14,3 +14,4 @@
 * [Article preview (Превью с статье)](https://neoscripter.github.io/website-portfolio/article-preview/), a preview to an article.
 * [Blog card (Карточка блога)](https://neoscripter.github.io/website-portfolio/blog-card/), a blog card.
 * [Car dealership article (Вебстраница автосалона)](https://neoscripter.github.io/website-portfolio/car-article/), a website of a dealership company.
+* [Calculator (Калькулятор)](https://neoscripter.github.io/website-portfolio/calculator-app/), a stylish calculator with different theme modes.
