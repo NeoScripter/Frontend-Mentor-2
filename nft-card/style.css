@@ -1,0 +1,140 @@
+/* Font settings */
+
+@font-face {
+font-family: 'Outfit';
+src: url(fonts/Outfit-VariableFont_wght.ttf);
+}
+
+/* Main layout settings */
+
+body {
+    background-color: hsl(217, 54%, 11%);
+    font-family: 'Outfit';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: block;
+    background-color: hsl(216, 50%, 16%);
+    max-width: 15em;
+    padding: 1rem;
+    color: hsl(215, 27%, 54%);
+    border-radius: 10px;
+    box-shadow: 1rem 2rem .3rem 0 rgba(8, 15, 25, 0.2), -1rem 2rem .3rem 0 rgba(8, 15, 25, 0.2), -2rem 3rem 2rem 0 rgba(8, 15, 25, 0.2), 2rem 3rem 2rem 0 rgba(8, 15, 25, 0.2), -2rem -1rem 2rem 0 rgba(8, 15, 25, 0.2), 2rem -1rem 2rem 0 rgba(8, 15, 25, 0.2);
+}
+
+.price {
+    padding-block: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: .8rem;
+    font-weight: 700;
+    border-bottom: 1px solid hsl(215, 32%, 27%);
+}
+
+.signature-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Image stylying */
+
+.image-link img {
+    border-radius: 5px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.link-wrapper {
+    position: relative;
+}
+
+.avatar {
+    width: 1.8rem;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.overlay img {
+    display: block;
+    color: white;
+    width: 3rem;
+}
+
+/* Text styling */
+
+.header {
+    display: inline-block;
+    margin-block: 1rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: hsl(0, 0%, 100%);
+}
+
+p {
+    margin: 0;
+    font-size: .9rem;
+}
+
+.price-left {
+    color: hsl(178, 100%, 50%);
+    background-image: url(images/icon-ethereum.svg);
+    background-repeat: no-repeat;
+    padding-left: 1rem;
+    background-size: .6rem;
+}
+
+.price-right {
+    background-image: url(images/icon-clock.svg);
+    background-repeat: no-repeat;
+    padding-left: 1.3rem;
+    background-size: 1rem;
+}
+
+
+.signature {
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+/* Link styles */
+
+a {
+    text-decoration: none;
+}
+
+.signature a {
+    display: inline-block;
+    color: white;
+}
+
+a:hover, a:focus {
+    color: hsl(178, 100%, 50%);
+}
+
+.overlay {
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 255, 247, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease; 
+    width: auto;
+}
+
+.image-link:hover .overlay {
+    opacity: 1;
+}

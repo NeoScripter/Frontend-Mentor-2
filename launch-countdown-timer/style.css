@@ -1,0 +1,117 @@
+
+:root {
+    --text-top: hsl(0, 0%, 100%);
+    --text-bottom: hsl(237, 18%, 59%);
+    --plates-color: hsl(345, 95%, 68%);
+    --plates-shadow: hsl(235, 16%, 14%);
+    --plates-bg: hsl(236, 21%, 26%);
+    --body-bg: hsl(234, 17%, 12%);
+}
+
+@font-face {
+    font-family: 'Red Hat Bold';
+    src: url(fonts/Red\ Hat\ Text\ Bold.woff2);
+}
+
+@font-face {
+    font-family: 'Red Hat Semi Bold';
+    src: url(fonts/Red\ Hat\ Text\ SemiBold.woff2);
+}
+
+@font-face {
+    font-family: 'Red Hat Medium';
+    src: url(fonts/Red\ Hat\ Text\ Medium.woff2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Red Hat Bold';
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    background-image: url(images/pattern-hills.svg), url(images/bg-stars.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: var(--body-bg);
+}
+
+.main_wrapper {
+    text-transform: uppercase;
+    height: 500px;
+    width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--text-top);
+    margin: 5% 0 10% 0;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+}
+
+.units {
+    color: var(--text-bottom);
+    letter-spacing: 3px;
+}
+
+.countdown_wrapper {
+    height: 35%;
+    display: grid;
+    justify-content: center;
+    gap: 7%;
+    grid-template-columns: repeat(4, 20%);
+}
+
+.display_bg {
+    background-color: hsl(236, 20%, 17%);
+}
+
+.display {
+    background-color: var(--plates-bg);
+    display: grid;
+    place-content: center;
+    color: var(--plates-color);
+    font-size: 380%;
+    aspect-ratio: 1/1;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 0 rgb(0,0,0,0.2);
+    transition: transform 0.6s linear;
+    transform-origin: bottom center;
+}
+
+.display.fold {
+    transform: rotateX(-120deg) scale(0.9);
+  }
+
+.social_links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 20%;
+}
+
+.svg {
+    cursor: pointer;
+    fill: #8385A9;
+}
+
+.svg:hover, .svg:focus {
+    fill: var(--plates-color);
+}
+.attribution { 
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
