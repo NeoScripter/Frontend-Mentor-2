@@ -1,28 +1,29 @@
-let countdownNumber = 14; // Starting number for the countdown
-const countdownElement = document.querySelector('.display');
+document.addEventListener('DOMContentLoaded', () => {
+  let countdownNumber = 4; // Starting number for the countdown
+  const countdownElement = document.querySelector('.display');
 
-// Function to start the countdown
-function startCountdown() {
-  const intervalId = setInterval(() => {
-    // Apply the fold effect
-    countdownElement.classList.add('fold');
+  // Function to start or continue the countdown
+  function startCountdown() {
+      const intervalId = setInterval(() => {
+          countdownElement.classList.add('fold');
 
-    // Wait for the half of the transition to change the number
-    setTimeout(() => {
-      countdownNumber--;
-      countdownElement.innerText = countdownNumber;
-      
-      // Remove the fold class to "unfold" the new number
-      countdownElement.classList.remove('fold');
+          setTimeout(() => {
+              countdownNumber--;
+              countdownElement.textContent = '';
+              countdownNumber = countdownNumber > 9 ? countdownNumber : `0${countdownNumber}`;
 
-      if (countdownNumber <= 0) {
-        clearInterval(intervalId); // Stop the countdown
-        countdownElement.innerText = "00";
-      }
-    }, 300); // Half of the transition time
+              if (countdownNumber <= 0) {
+                  clearInterval(intervalId);
+                  countdownElement.textContent = "00";
+              }
+          }, 300); // Update at the midpoint of the animation for visibility during flip
 
-  }, 1000); // Change the number every second
-}
+          countdownElement.addEventListener('animationend', () => {
+              countdownElement.classList.remove('fold');
+              countdownElement.textContent = countdownNumber;
+          }, { once: true });
+      }, 1000); // Change the number every second
+  }
 
-// Start the countdown
-startCountdown();
+  startCountdown();
+});
