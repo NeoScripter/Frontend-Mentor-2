@@ -1,29 +1,45 @@
-document.addEventListener('DOMContentLoaded', () => {
-  let countdownNumber = 4; // Starting number for the countdown
-  const countdownElement = document.querySelector('.display');
 
-  // Function to start or continue the countdown
-  function startCountdown() {
-      const intervalId = setInterval(() => {
-          countdownElement.classList.add('fold');
+  let days = parseInt(document.getElementById('days').textContent, 10);
+  let hours = parseInt(document.getElementById('hours').textContent, 10);
+  let minutes = parseInt(document.getElementById('minutes').textContent, 10);
+  let seconds = parseInt(document.getElementById('seconds').textContent, 10);
 
-          setTimeout(() => {
-              countdownNumber--;
-              countdownElement.textContent = '';
-              countdownNumber = countdownNumber > 9 ? countdownNumber : `0${countdownNumber}`;
-
-              if (countdownNumber <= 0) {
-                  clearInterval(intervalId);
-                  countdownElement.textContent = "00";
+  function countdownTick() {
+      seconds--;
+      if (seconds < 0) {
+          seconds = 59;
+          minutes--;
+          if (minutes < 0) {
+              minutes = 59;
+              hours--;
+              if (hours < 0) {
+                  hours = 23;
+                  days--;
               }
-          }, 300); // Update at the midpoint of the animation for visibility during flip
+          }
+      }
 
-          countdownElement.addEventListener('animationend', () => {
-              countdownElement.classList.remove('fold');
-              countdownElement.textContent = countdownNumber;
-          }, { once: true });
-      }, 1000); // Change the number every second
+      updateDisplay('seconds', seconds);
+      if (seconds === 59) {
+          updateDisplay('minutes', minutes);
+          if (minutes === 59) {
+              updateDisplay('hours', hours);
+              if (hours === 23) {
+                  updateDisplay('days', days);
+              }
+          }
+      }
+
+      if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
+          clearInterval(intervalId);
+      }
   }
 
-  startCountdown();
-});
+  function updateDisplay(unit, value) {
+      const display = document.getElementById(unit);
+      display.textContent = `${value < 10 ? '0' : ''}${value}`;
+      display.classList.add('fold');
+      setTimeout(() => display.classList.remove('fold'), 600);
+  }
+
+  const intervalId = setInterval(countdownTick, 1000);

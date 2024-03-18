@@ -5,6 +5,7 @@
     --plates-color: hsl(345, 95%, 68%);
     --plates-shadow: hsl(235, 16%, 14%);
     --plates-bg: hsl(236, 21%, 26%);
+    --plates-bg-before: hsl(236, 15%, 21%);
     --body-bg: hsl(234, 17%, 12%);
 }
 
@@ -131,8 +132,8 @@ h1 {
     right: 0;
     bottom: 50%;
     background-color: var(--plates-bg);
-    border-top: 1px solid rgba(117, 110, 110, 0.4);
-    border-bottom: 1px solid rgb(117, 110, 110,0.4);
+    border-top: 1px solid rgba(117, 110, 110, 0.8);
+    border-bottom: 1px solid rgb(117, 110, 110,0.8);
     opacity: 0;
     z-index: 10;
     transform-origin: bottom center;
@@ -143,6 +144,7 @@ h1 {
     0% {
         transform: perspective(1000px) rotateX(0deg);
         opacity: 0; 
+        background-color: var(--plates-bg);
     }
     25% {
         opacity: 1;
@@ -150,6 +152,7 @@ h1 {
     50% {
         transform: perspective(1000px) rotateX(-180deg);
         opacity: 1; 
+        background-color: var(--plates-bg-before);
     }
     75% {
         opacity: 0;
@@ -204,6 +207,7 @@ h1 {
     translate: -50%;
     font-size: 11px; 
     text-align: center; 
+    color: white;
 }
 .attribution a { 
     color: hsl(228, 45%, 44%); 
