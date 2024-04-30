@@ -2,7 +2,6 @@
 
 * [Сайт юридической фирмы](https://neoscripter.github.io/legal_website_youdo/), многостраничный сайт юридической фирмы.
 * [Сайт агенства по изготовлению плетеных изделий](https://neoscripter.github.io/knot_agency_website/), сайт агенства по изготовлению плетеных изделий с интересным дизайном и оформлением.
-* [Сайт по продаже масла для вейпов](https://neoscripter.github.io/hemp_website_youdo/), сайт компании, которая занимается продажей масла для вейпов.
 * [Appareal Coming Soon (Рекламная страница агенства)](https://neoscripter.github.io/website-portfolio/apparel-coming-soon/), a responsive webpage with a webform.
 * [Rock Paper Scissors (Камень, Ножница, Бумага)](https://neoscripter.github.io/website-portfolio/rock-paper-scissors-game/), a very appealing and beautifully made interface of the Rock Paper Scissors game with responsive design for any type of screen.
 * [Sunnyside landing page (Главная страница агенства Санисайд)](https://neoscripter.github.io/website-portfolio/sunnyside-agency-landing-page/), a landing page of a creative design agency Sunnyside.
