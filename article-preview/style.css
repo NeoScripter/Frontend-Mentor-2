@@ -25,16 +25,24 @@ body {
     border-radius: 10px;
 }
 
-.main-image {
-    width: 35%;
-    object-fit: cover;
-    object-position: 0%;
+.content-left {
+    flex-basis: 35%;
     border-radius: 10px 0 0 10px;
+}
+
+.main-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+    border-radius: inherit;
+
 }
 
 .content-right {
     padding: 1em 2em;    
     position: relative;
+    flex-basis: 65%;
 }
 
 .footer {
@@ -127,6 +135,7 @@ span {
 @media (max-width: 500px) {
     .content {
         flex-direction: column;
+        max-width: 17em;
     }
     .content {
         margin-inline: 1em;
@@ -134,8 +143,7 @@ span {
     .footer {
         margin-bottom: 0;
     }
-    .main-image {
-        width: 100%;
+    .content-left {
         max-height: 15em;
         border-radius: 10px 10px 0 0;
     }
